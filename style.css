@@ -1,0 +1,12 @@
+  /* FUNNY FONTS PLEASE WORK */
+  body {
+    background-color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
+    font-family: 'apple_ii_proregular';
+  }
+  .box input {
+    color: rgb(181, 22, 212);
+    background-color: rgb(255, 255, 255);
+    font-family: 'apple_ii_proregular';
+  }
+

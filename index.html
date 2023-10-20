@@ -3,14 +3,25 @@
   <head>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <script defer src="./script.js"></script>
+    <style>
+    @font-face {
+  font-family: 'apple_ii_proregular';
+  src: url(https://mazrine.neocities.org/assets/fonts/apple2-webfont.woff);
+}
+    </style>
 
   </head>  
   <body>
-    <form id="form-a">
-        <label for="a" id="label-a">Welcome. I am <span style="color: rgb(186, 10, 240)">Mazrine</span> and this is a demo <span style="color: rgb(186, 10, 240)">project</span> based on <span style="color: rgb(10, 83, 240)">Moonring</span> dialogue system! Try typing the <span style="color: rgb(186, 10, 240)">purple</span> words you see around!</label>
-        <input name="a" id="input-a" type="text" value="type here"\>
-    </form>
 
+      <form id="form-a">
+        <div class="typedtext">
+          <label for="a" id="label-a">Welcome. <br /> I am <span style="color: rgb(186, 10, 240)">Mazrine</span> and this is a demo <span style="color: rgb(186, 10, 240)">project</span> based on <span style="color: rgb(10, 83, 240)">Moonring</span> dialogue system! Try typing the <span style="color: rgb(186, 10, 240)">purple</span> words you see around!</label>
+        </div>
+          <div class="box">
+          <input name="a" id="input-a" type="text" value="type here">
+          </div>
+        </form>
+        
 </body>
 
 </html>
