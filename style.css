@@ -5,8 +5,12 @@
     font-family: 'apple_ii_proregular';
   }
   .box input {
-    color: rgb(181, 22, 212);
+    color: blueviolet;
     background-color: rgb(255, 255, 255);
     font-family: 'apple_ii_proregular';
+  }
+
+  ::placeholder {
+    color: blueviolet;
   }
 
