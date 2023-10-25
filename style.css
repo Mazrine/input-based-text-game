@@ -1,15 +1,163 @@
-  /* FUNNY FONTS PLEASE WORK */
+  /*THEME TIME */
+
+  
+  :root,
+  [data-selected-theme="eyes"] {
+    --bg-image: url('backgroundmaz.gif'); 
+    --bg-size: 20em;
+    --color-background: #000000;
+    --border-color: cyan;
+    --color-text: #00ffdd;
+    --color-accent: rgb(226, 43, 202);
+  }
+  
+  [data-selected-theme="creepy"] {
+    --bg-image: url('backgroundmaz2.gif');
+    --bg-size: 20em;
+    --color-background: #000000;
+    --border-color: #50ffbc;
+    --color-text: #a3eba7;
+    --color-accent: #672bf3;
+  }
+  
+  [data-selected-theme="singularity"] {
+    --bg-image: url('backgroundmaz3.gif');
+    --bg-size: 20em;
+    --border-color: #5442fc;
+    --color-background: #000000;
+    --color-text: #606afa;
+    --color-accent: #ff0055;
+  }
+  
+  [data-selected-theme="entropy"] {
+    --color-background: #000000;
+    --bg-size: 20em;
+    --bg-image:  url("backgroundmaz4.gif");
+    --border-color: rgb(255, 255, 255);
+    --color-text: #ffffff;
+    --color-accent: #ffffff;
+  }
+  
+
+  
   body {
-    background-image: url("backgroundmaz.gif") ;
-    background-size: contain;
-    color: rgb(255, 255, 255);
+
+    background-image: var(--bg-image);
+    background: var();
+    color: var(--color-text);
+    background-size: var(--bg-size);
     font-family: 'apple_ii_proregular';
     font-size: 3vmin;
+    overflow: hidden; /* Hide scrollbars */
   }
+  
+  ::selection {
+    background-color: var(--color-accent);
+  }
+  
+  .container {
+
+
+  }
+  
+  .container:has(button[data-theme]:active) {
+    transform: rotateZ(0.35deg);
+  } 
+  
+  .container:has(button[data-theme]:nth-of-type(2n):active) {
+    transform: rotateZ(-0.35deg);
+  }
+  
+
+  
+
+  
+  a {
+    color: inherit;
+    text-decoration-thickness: 2px;
+  }
+  
+  a:is(:hover, :focus) {
+    text-decoration-thickness: 4px;
+  }
+  
+  .theme-switcher {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: double;
+    opacity: 1;
+    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+    background-color: rgba(17, 17, 17, 0.808);
+  }
+  
+  button[data-theme] {
+
+    border-style: double;
+    background: transparent;
+    font-family: 'apple_ii_proregular';
+
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+  }
+  
+  button[data-theme] + button[data-theme] {
+    border-left: none;
+  }
+  
+  button[data-theme]:first-of-type {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+  }
+  
+  button[data-theme]:last-of-type {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+  
+  button[data-theme][aria-pressed="true"] {
+    background-color: var(--color-text);
+    color: var(--color-background);
+  }
+  
+  button[data-theme]:is(:hover, :focus) {
+    box-shadow: 0 0 0 2px var(--color-text) inset;
+  }
+  
+  button[data-theme][aria-pressed="true"]:is(:hover, :focus) {
+    box-shadow: 0 0 0 2px var(--color-background) inset;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .theme-switcher {
+      display: block;
+    }
+    
+    button[data-theme] {
+      display: block;
+      margin: 0 auto;
+      border-radius: var(--border-radius);
+    }
+    
+    button[data-theme]:is(:first-of-type, :last-of-type) {
+      border-radius: var(--border-radius);
+    }
+    
+    button[data-theme] + button[data-theme] {
+      border-left: 2px solid var(--color-text);
+      margin-top: 1rem;
+    }
+  }
+  
+  /* FUNNY FONTS PLEASE WORK */
 
   header {
+
     border-style: double;
-    border-color: cyan;
+    border-color: var(--border-color);
     background-color: rgba(17, 17, 17, 0.808);
     display: flex;
   }
@@ -45,7 +193,7 @@
 
   .talkbox {
     background-color: rgba(17, 17, 17, 0.808);
-    border-color: cyan;
+    border-color: var(--border-color);
     margin-left: auto;
     margin-right: auto;
 
@@ -54,20 +202,24 @@
     max-width: 50%;
     aspect-ratio: 2 / 1;
     white-space: pre-line;
+
   }
 
   #input-a {
+    position: absolute;
+    bottom: 25%;
+    left: 20%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+
     font-size: 3vmin;
     border-radius: 3px;
     border-style: double;
-    border-color: blueviolet;
+    border-color: var(--color-text);
     color: blueviolet;
     background-color: rgb(255, 255, 255);
-    font-family: 'apple_ii_proregular';'
-    height: 10%;
+    font-family: 'apple_ii_proregular';
     width: 50%;
     padding-left: 3px;
     padding-right: 10px;
@@ -78,18 +230,19 @@
   .testbox {
     background-color: rgba(17, 17, 17, 0.808);
     border-style: double;
-    border-color: cyan;
+    border-color: var(--border-color);
     margin-right: auto;
   }
 
   #circle {
     
     font-size: 10px;
-    color: cyan;
+    font-family: 'apple_ii_proregular';
+    color: var(--color-text);
     positiorgb(4, 50, 255)e;
     border-radius: 100%;
     padding: 16px;
-     animation: rotate-animation 8s infinite linear;
+    animation: rotate-animation 8s infinite linear;
     
   
   }
@@ -111,7 +264,155 @@
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-    color: rgb(226, 43, 202);
+    color: var(--color-accent);
   }
 
+    /* Carrossell */
+
+    .items {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      user-select: none;
+    }
+    
+    .items .item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 25em;
+      height: 250px;
+
+      overflow: hidden;
+      transition: all 300ms ease-in-out;
+      z-index: -1;
+      opacity: 0;
+    }
+    
+    .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .item.active {
+      opacity: 1;
+      z-index: 99;
+      box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+      background-color: rgba(17, 17, 17, 0.808);
+      border-style: double;
+      border-color: var(--border-color);
+    }
+    
+    .item.prev {
+      z-index: 2;
+      opacity: 0.7;
+      transform: translate(-175%, -50%);
+      background-color: rgba(17, 17, 17, 0.808);
+      border-style: double;
+      border-color: var(--border-color);
+    }
+    
+    .item.next {
+      z-index: 2;
+      opacity: 0.7;
+      transform: translate(75%, -50%);
+      background-color: rgba(17, 17, 17, 0.808);
+      border-style: double;
+      border-color: var(--border-color);
+    }
+    
+    .items .button-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 32em;
+      z-index: 100;
+    }
+    
+    .button-container .button {
+      color: #fff;
+      font-size: 32px;
+      cursor: pointer;
+      position: relative;
+      opacity: 0.75;
+      transition: all 300ms ease-in-out;
+    }
+    
+    .button-container .button:hover {
+      opacity: 1;
+    }
+    
+    .button-container .button:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 1);
+      border-radius: 50%;
+      z-index: -99;
+    }
+    
+    .button-container .button:nth-child(1) {
+      float: left;
+    }
+    
+    .button-container .button:nth-child(2) {
+      float: right;
+    }
   
+.bottom-menu {
+      opacity: 1;
+      z-index: 99;
+      box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+      background-color: rgba(17, 17, 17, 0.808);
+      border-style: double;
+      border-color: var(--border-color);
+      width: 15em;
+      height: 3em;
+      margin-top: 20em;
+      text-align: center;
+      
+
+}
+
+.lines {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999999999999999999999999999999999999999999999999999999999999;
+    opacity: 0.05;
+}
+
+.lines:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-xgradient(to bottom, transparent 50%, rgba(0, 0, 0, .5) 51%);
+    background-size: 100% 4px;
+    will-change: background, background-size; animation: scanlines 0.2s linear infinite;
+}
+
+@keyframes scanlines {
+    from {
+    background: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, .5) 51%); background-size: 100% 4px; }
+    to {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 50%, transparent 51%);
+    background-size: 100% 4px;
+    }
+}
+
+

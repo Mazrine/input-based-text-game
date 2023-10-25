@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset='utf-8'>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <script defer src="./script.js"></script>
     <style>
@@ -12,29 +13,60 @@
     </style>
 
   </head>  
-  <body>
-    <header>
+  <body >
+    <div class="lines"></div>
+      <header>
       <p class="funny-text">{-▽-Ð╚{Ä█‼▒©ä'þ█7L░♫Z}</p>
-      <div id='circle' data-text="▽▽▽▽▽▽▽▽▽▽&nbsp;"></div>
+      <div id='circle' data-text="â–½â–½â–½â–½â–½â–½â–½â–½â–½â–½"></div>
       <p class="funny-text">{-▽-Ð╚{Ä█‼▒©ä'þ█7L░♫Z}</p>
   
     </header>
+
     <div class="flexbox-container">
-      <div class="talkbox">
-       <form id="form-a">
-          <div class="typedtext">
-            <label for="a" id="label-a">Welcome. <br /> I am <span style="color: rgb(186, 10, 240)">Mazrine</span> and this is a demo <span style="color: rgb(186, 10, 240)">project</span> based on <span style="color: rgb(10, 83, 240)">Moonring</span> dialogue system! Try typing the <span style="color: rgb(186, 10, 240)">purple</span> words you see around!</label>
+      <div class="items">
+        <div class="item active" class="talkbox">
+          <form id="form-a">
+            <div class="typedtext">
+              <label for="a" id="label-a">Welcome. <br /> I am <span style="color: rgb(186, 10, 240)">Mazrine</span> and this is a placeholder demo <span style="color: rgb(186, 10, 240)">project</span> based on <span style="color: rgb(10, 83, 240)">Moonring</span> dialogue system! Try typing the <span style="color: rgb(186, 10, 240)">purple</span> words you see around!</label>
+            </div>
+  
+              <input name="a" id="input-a" type="text" placeholder="type here">
+  
+            </form>
+        </div>
+        <div class=" item next">
+          <p>aaaaaa</p>
+        </div>
+        <div class="item">
+          <p>123123123123123123123123</p>
+        </div>
+        <div class="item">
+          <p>HHHHHHHHHHH</p>
+        </div>
+        <div class="item prev">
+          <p>eeeeeeeeeeeeee</p>
+        </div>
+        <div class="button-container">
+          <div class="button"><<i class="fas fa-angle-left"></i></div>
+          <div class="button">><i class="fas fa-angle-right"></i></div>
+        </div>
+        <div class="bottom-menu">
+          <div class="container">
+            <p>♡ Pick a theme ♡</p>
+          <div class="theme-switcher">
+            <button data-theme="eyes" aria-pressed="true">1</button>
+            <button data-theme="creepy" aria-pressed="false">2</button>
+            <button data-theme="singularity" aria-pressed="false">3</button>
+            <button data-theme="entropy" aria-pressed="false">4</button>
           </div>
-
-            <input name="a" id="input-a" type="text" placeholder="type here">
-
-          </form>
+          </div>
+        </div>
       </div>
-      <div class="testbox">
-        <h1>aaaa</h1>
-      </div> 
+      
+
     </div>   
     <footer>
+
       
     </footer>
 </body>
